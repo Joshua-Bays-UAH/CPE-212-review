@@ -1,0 +1,486 @@
+%TODO: Presentation 10 (Software Testing)
+
+\documentclass[c, aspectratio=169]{beamer}
+\usetheme[nofirafonts]{focus}
+%\usepackage{beamercolorthememagpie}
+\usepackage{animate}
+\usepackage{anyfontsize}
+\usepackage{comment}
+\usepackage{multicol}
+\usepackage{listings}
+\usepackage{tgadventor}
+\usepackage{verbatim}
+\usepackage{xcolor}
+
+\title{CPE 212 Review Guide}
+\author{Joshua Bays}\date{Fall 2024}
+\institute{Univeristy of Alabama in Huntsville}
+
+\definecolor{main}{RGB}{00, 66, 142}
+\definecolor{background}{RGB}{240, 247, 255}
+%\definecolor{background}{RGB}{0, 0, 0}
+
+\hypersetup{colorlinks=true, linkcolor=black, urlcolor=blue}
+\footlineinfo{CPE 212 Review}
+
+\definecolor{clr-background}{RGB}{255,255,255}
+\definecolor{clr-text}{RGB}{0,0,0}
+\definecolor{clr-string}{RGB}{163,21,21}
+\definecolor{clr-namespace}{RGB}{0,0,0}
+\definecolor{clr-preprocessor}{RGB}{128,128,128}
+\definecolor{clr-keyword}{RGB}{0,0,255}
+\definecolor{clr-type}{RGB}{43,145,175}
+\definecolor{clr-variable}{RGB}{0,0,0}
+\definecolor{clr-constant}{RGB}{111,0,138} % macro color
+\definecolor{clr-comment}{RGB}{0,128,0}
+
+\lstdefinestyle{mystyle}{
+	language=C++,
+	backgroundcolor=\color{clr-background},
+	basicstyle=\color{clr-text}, % any text
+	stringstyle=\color{clr-string},
+	identifierstyle=\color{clr-variable}, % just about anything that isn't a directive, comment, string or known type
+	commentstyle=\color{clr-comment},
+	directivestyle=\color{clr-preprocessor}, % preprocessor commands
+	% listings doesn't differentiate between types and keywords (e.g. int vs return)
+	% use the user types color
+	keywordstyle=\color{clr-type},
+	keywordstyle={[2]\color{clr-constant}}, % you'll need to define these or use a custom language
+	tabsize=4,
+}
+\lstset{style=mystyle}
+\lstset{directives={\#include}}
+
+
+\begin{document}
+\begin{frame}
+\titlepage
+\end{frame}
+
+\section*{About this Document}
+\begin{frame}\frametitle{About this Document}
+\begin{itemize}
+\item This document is intended to serve as a useful reference and study tool for the CPE 212 final exam.
+\item The code snippets presented in this document are designed to be basic representations of different concepts, and may differ from the methods presented in lectures
+\item Any suggestions for additions or changes can be made to Joshua Bays by emailing \href{mailto:jb0401@uah.edu}{jb0401@uah.edu} or by sending a message via Canvas
+\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Table of Contents}
+\begin{multicols}{2}
+\tableofcontents
+\end{multicols}
+\end{frame}
+
+\section{Classes}
+\begin{frame}\frametitle{Classes - Overview}
+\begin{itemize}
+\item Class: Custom model of abstract data type (ADT)
+\item Object: Instance of a class
+\item Member types
+	\begin{itemize}
+	\item Public: Can be accessed directly from outside of the class
+	\item Private: Can be accessed directly only from within the class
+	\item Protected: Can be inherited within derived classes
+	\end{itemize}
+\item Member functions
+	\begin{itemize}
+	\item Constructor: Initialize an object
+	\item Transformers: Change an object's state
+	\item Observers: Get (but not change) an object's state
+	\item Iterators: Process all components within an ADT
+	\item Destructor: Properly clean up and object (Ex: de-allocate memory)
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Classes - Inheritance}
+\begin{itemize}
+\item Inheritance: Reuse existing class code for another class
+\item Multiple inheritance: Inheriting code from multiple classes
+\item Parent/Base class: The class being inherited from
+\item Derived class: A class that inherits from another class
+\item Virtual function: A member function that can be redefined by an inherited class
+\item Friend function: Non-member function that can access private members
+\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Classes - Code}
+Inheritance
+\lstinputlisting[basicstyle=\tiny, firstline=3, lastline=20]{code/inheritance.cpp}
+\lstinputlisting[basicstyle=\tiny, firstline=30, lastline=36]{code/inheritance.cpp}
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{Classes - Code}
+Inheritance (cont.)
+\begin{center}
+\lstinputlisting[basicstyle=\tiny, firstline=22, lastline=28]{code/inheritance.cpp}
+\end{center}
+
+Output
+\verbatiminput{code/inheritance-output.txt}
+\end{frame}
+
+\section{Pointers}
+\begin{frame}\frametitle{Pointers - Overview}
+\begin{itemize}
+\item Pointer: Variable that stores the memory address of another variable
+\item Dereferencing: Access the value stored in the location stored in the pointer
+\item Static allocation: Memory allocated at compile time
+\item Dynamic allocation: Memory allocated during program runtime
+\item Heap: Free memory for dynamic allocation
+\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Pointers - Overview}
+\begin{itemize}
+\item Memory leak: Memory dynamically allocated but not deallocated
+\item Garbage: Locations in memory that can not be accessed any more
+\item Inaccessible object: Dynamically allocated variable without a pointer
+\item Dangling pointer: A pointer that points to memory that has been deallocated
+\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Pointers - Dynamic Allocation}
+\begin{itemize}
+\item Use the new keyword to allocate memory in C++
+\item Use the delete keyword on a pointer to deallocate memory in C++
+\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Pointers - Code}
+Static allocation
+\lstinputlisting[basicstyle=\tiny, firstline=3]{code/pointer1.cpp}
+
+Output
+\verbatiminput{code/pointer1-output.txt}
+\end{frame}
+
+\begin{frame}\frametitle{Pointers - Code}
+Dynamic Allocation
+\lstinputlisting[basicstyle=\tiny, firstline=4]{code/pointer2.cpp}
+
+Output
+\verbatiminput{code/pointer2-output.txt}
+\end{frame}
+
+\section{Exception Handling}
+\begin{frame}\frametitle{Exception Handling - Overview}
+\begin{itemize}
+\item Robustness: How well a program can recover from an error
+\item Error types
+	\begin{itemize}
+	\item Unexpected user input
+	\item Hardware issues
+	\item Software issues
+	\end{itemize}
+\item Ways to handle errors
+	\begin{itemize}
+	\item Print an error message
+	\item Return an unusual value (Ex: -1)
+	\item Use a status variable as an error flag
+	\item Use assertions to prevent further code execution
+	\item Exception handling
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Exception Handling - Overview}
+\begin{itemize}
+\item Exception: Unexpected event that requires special processing
+\item Exception handler: Code designed to address a specific exception
+\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Exception Handling - Try/Throw/Catch}
+\begin{itemize}
+\item Try: Execute code that may cause and exception within its own block
+\item Throw: If an error is detected terminate the program or execute code to address the exception by ``throwing'' an error
+\item Catch: Address the exception based on the type of error provided by the throw statement
+\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Exception Handling - Code}
+Basic exception handling
+\lstinputlisting[basicstyle=\tiny, firstline=3]{code/try-throw-catch.cpp}
+\end{frame}
+
+\section{Software Engineering}
+\begin{frame}\frametitle{Software Engineering - Overview}
+\begin{itemize}
+\item Attributes of good software
+	\begin{itemize}
+	\item Works
+	\item Can be easily modified
+	\item Is reusable
+	\item Is completed within time and budget requirements
+	\end{itemize}
+\item Software engineering: The proper application of the principles of design, production, and maintenance of software
+	\begin{itemize}
+	\item Technical challenges
+	\item Project management
+	\end{itemize}
+\item Defects in code
+	\begin{itemize}
+	\item About 1 error is created for every 10 lines of code
+	\item 75\% of a code's cost is in maintenance of that code
+	\end{itemize}
+\item Software process: The process by which software is developed and maintained
+\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Software Engineering - Parts of Software Development}
+\begin{itemize}
+\item Requirements: High-level description of the product
+\item Specification: Detailed description containing functional requirements and constraints
+\item Design: Architectural (high-level) and detailed (low-level) design of the product
+\item Implementation: Converting the design into code
+\item Testing/Verification: Finding and fixing errors and demonstrating that the product works correctly
+\item Postdelivery/Maintenance: Correct errors found by users and enhancing functionality
+\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Software Engineering - Processes}
+\begin{itemize}
+\item Waterfall process: Each step of the process is an input for the next step
+\item Agile process: Emphasizing individuals/interactions and working software over specific processes in order to enable quick changing and customer collaboration
+\item Scrum: Work is designed to be done in short periods called ``sprints,'' with daily work being determined by the needs of the current sprint
+\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Software Engineering - Testing Overview}
+\begin{itemize}
+\item Testing: Trying to discover errors within a program
+\item Debugging: Removing known errors from a program
+\item Driver: A program specifically designed to test a part of code
+\item Stub: Dummy code designed to simulate real-life use cases
+\item Assertion: A statement that is either true or false
+\item Precondition: An assertion that must be true in order for a postcondition to be returned
+\item Postcondition: An assertion that is expected from a certain precondition
+\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Software Engineering - Testing Hierarchy and Types}
+\begin{itemize}
+\item Deskchecking: Informal checking by the developer
+\item Unit testing: Formally testing individual parts of a program by themselves
+\item Integration testing: Formally and systematically testing a part of a program within the larger code base
+\item Acceptance testing: Testing the program with real data in its real environment
+\item Regression testing: Testing a program following modifications
+\item Black-box testing: Testing a program by its inputs and outputs
+\item Clear-box testing: Testing a program utilizing knowledge of its structure
+\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Software Engineering - Verification VS Validation}
+\begin{itemize}
+\item Verification: The program works properly
+\item Validation: The program satisfies the needs of the problem
+\end{itemize}
+\end{frame}
+
+\section{Testing}
+
+\section{Stacks}
+\begin{frame}\frametitle{Stacks - Overview}
+\begin{itemize}
+\item Stack: Specially organized list
+	\begin{itemize}
+	\item LIFO structure (Last In, First Out)
+	\item Data entry is only through the top of the stack
+	\end{itemize}
+\item Basic stack operations:
+\begin{itemize}
+\item Push: Add an item from the top of the stack
+\item Pop: Remove the top item from the stack
+\item Top: Observe the top item from the stack
+\item IsEmpty: Returns if the stack has no elements on it
+\item IsFull: Returns if the stack is at its maximum capacity
+\item MakeEmpty: Remove all elements from the stack
+\end{itemize}
+\item Different methods exist to implement stacks
+	\begin{itemize}
+	\item Array-based: Less memory used, but harder to resize
+	\item Linked node-based: Easier to resize, but more memory used
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Stacks - Code}
+Basic stack code (Linked list)
+\lstinputlisting[basicstyle=\tiny, firstline=4, lastline=30]{code/stack.cpp}
+%\lstinputlisting[basicstyle=\tiny, firstline=12, lastline=27]{code/stack.cpp}
+\end{frame}
+
+\begin{frame}\frametitle{Stacks - Code}
+Basic stack code (cont.)
+\lstinputlisting[basicstyle=\tiny, firstline=47, lastline=55]{code/stack.cpp}
+\end{frame}
+
+\begin{frame}\frametitle{Stacks - Code}
+Basic stack code (cont.)
+\lstinputlisting[basicstyle=\tiny, firstline=57, lastline=75]{code/stack.cpp}
+\end{frame}
+
+\begin{frame}\frametitle{Stacks - Code}
+Basic stack code (cont.)
+\lstinputlisting[basicstyle=\tiny, firstline=77, lastline=99]{code/stack.cpp}
+\end{frame}
+
+\begin{frame}\frametitle{Stacks - Code}
+Basic stack code (cont.)
+\lstinputlisting[basicstyle=\tiny, firstline=101]{code/stack.cpp}
+\end{frame}
+
+\section{Lists}
+\begin{frame}\frametitle{Lists - Overview}
+\begin{itemize}
+\item List: Linear collection of homogeneous items
+	\begin{itemize}
+	\item Can be sorted or unsorted
+	\end{itemize}
+\item Basic list operations:
+	\begin{itemize}
+	\item IsEmpty: 
+	\item IsFull:
+	\item Length: 
+	\item Insert: 
+	\item Delete: 
+	\item IsPresent
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}\end{frame}
+\begin{frame}\end{frame}
+
+\section{Queues}
+\begin{frame}\end{frame}
+\begin{frame}\end{frame}
+\begin{frame}\end{frame}
+
+\section{Generic Programming}
+\begin{frame}\end{frame}
+\begin{frame}\end{frame}
+\begin{frame}\end{frame}
+
+\section{Recursion}
+\begin{frame}\end{frame}
+\begin{frame}\end{frame}
+\begin{frame}\end{frame}
+
+\section{Trees}
+\begin{frame}\end{frame}
+\begin{frame}\end{frame}
+\begin{frame}\end{frame}
+
+\section{Heaps}
+\begin{frame}\end{frame}
+\begin{frame}\end{frame}
+\begin{frame}\end{frame}
+
+\section{Graphs}
+\begin{frame}\end{frame}
+\begin{frame}\end{frame}
+\begin{frame}\end{frame}
+
+\section{Searching}
+\begin{frame}\frametitle{Searching - Overview}
+\begin{itemize}
+\item Searching: Finding a specific item from a set of data
+	\begin{itemize}
+	\item Efficiency: Program performance is improved
+	\item Data retrieval: Specific data is quickly found in a large dataset
+	\item Problem solving: Data needs to be found in order to solve problems
+	\end{itemize}
+\item Different methods of searching
+	\begin{itemize}
+	\item Linear search
+	\item Binary search
+	\item Hashing
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Searching - Linear Search}
+\begin{itemize}
+\item Linear search: Sequentially search through a set of data until the value is found
+\item Complexity:
+	\begin{itemize}
+	\item Best case: $O(1)$ (The first element)
+	\item Worst case: $O(n)$ (The last element)
+	\end{itemize}
+\item Use cases:
+	\begin{itemize}
+	\item Small dataset
+	\item Unordered datasets
+	\item Linked lists
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Searching - Code}
+Basic linear search code
+\lstinputlisting[basicstyle=\tiny, firstline=3]{code/linear-search.cpp}
+
+Output
+\verbatiminput{code/linear-search-output.txt}
+\end{frame}
+
+\begin{frame}\frametitle{Searching - Binary Search}
+\begin{itemize}
+\item Binary search: Continually divide the search area in half, comparing the middle value to the target value
+\item Complexity
+	\begin{itemize}
+	\item Best case: $O(1)$ (The first element)
+	\item Worst case: $O(\log n)$ (The last element)
+	\end{itemize}
+\item Use cases:
+	\begin{itemize}
+	\item Data must be sorted
+	\item Random access should be a constant time function
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Searching - Code}
+Basic binary search code
+\lstinputlisting[basicstyle=\tiny, firstline=3]{code/binary-search.cpp}
+
+Output
+\verbatiminput{code/binary-search-output.txt}
+\end{frame}
+
+\begin{frame}\frametitle{Searching - Hashing}
+\begin{itemize}
+\item Hashing: Data storage technique designed to allow $O(1)$ search time
+	\begin{itemize}
+	\item Assign key-value pairs through a function to data inputs
+	\item Hash function used to store the element and to find if the element exists in the dataset
+	\item Tradeoff of memory space for access speed
+	\end{itemize}
+\item Collision: Repeated outputs for different inputs
+	\begin{itemize}
+	\item Must be addressed with hash function (Ex: Offsetting the value)
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Searching - Code}
+Basic hashing code
+\lstinputlisting[basicstyle=\tiny, firstline=3, lastline=25]{code/hashing.cpp}
+\end{frame}
+
+\begin{frame}\frametitle{Searching - Code}
+Basic hashing code (Cont.)
+\lstinputlisting[basicstyle=\tiny, firstline=27]{code/hashing.cpp}
+Output
+\verbatiminput{code/hashing-output.txt}
+\end{frame}
+
+\section{Sorting}
+\begin{frame}\end{frame}
+\begin{frame}\end{frame}
+\begin{frame}\end{frame}
+
+\end{document}
