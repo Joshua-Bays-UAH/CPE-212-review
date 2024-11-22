@@ -1,0 +1,41 @@
+\section{Exception Handling}
+\begin{frame}\frametitle{Exception Handling - Overview}
+\begin{itemize}
+\item Robustness: How well a program can recover from an error
+\item Error types
+	\begin{itemize}
+	\item Unexpected user input
+	\item Hardware issues
+	\item Software issues
+	\end{itemize}
+\item Ways to handle errors
+	\begin{itemize}
+	\item Print an error message
+	\item Return an unusual value (Ex: -1)
+	\item Use a status variable as an error flag
+	\item Use assertions to prevent further code execution
+	\item Exception handling
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Exception Handling - Overview}
+\begin{itemize}
+\item Exception: Unexpected event that requires special processing
+\item Exception handler: Code designed to address a specific exception
+\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Exception Handling - Try/Throw/Catch}
+\begin{itemize}
+\item Try: Execute code that may cause and exception within its own block
+\item Throw: If an error is detected terminate the program or execute code to address the exception by ``throwing'' an error
+\item Catch: Address the exception based on the type of error provided by the throw statement
+\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Exception Handling - Code}
+Basic exception handling
+\lstinputlisting[basicstyle=\tiny, firstline=3]{code/try-throw-catch.cpp}
+\end{frame}
+

@@ -1,0 +1,42 @@
+\section{Pointers}
+\begin{frame}\frametitle{Pointers - Overview}
+\begin{itemize}
+\item Pointer: Variable that stores the memory address of another variable
+\item Dereferencing: Access the value stored in the location stored in the pointer
+\item Static allocation: Memory allocated at compile time
+\item Dynamic allocation: Memory allocated during program runtime
+\item Heap: Free memory for dynamic allocation
+\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Pointers - Overview}
+\begin{itemize}
+\item Memory leak: Memory dynamically allocated but not deallocated
+\item Garbage: Locations in memory that can not be accessed any more
+\item Inaccessible object: Dynamically allocated variable without a pointer
+\item Dangling pointer: A pointer that points to memory that has been deallocated
+\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Pointers - Dynamic Allocation}
+\begin{itemize}
+\item Use the new keyword to allocate memory in C++
+\item Use the delete keyword on a pointer to deallocate memory in C++
+\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Pointers - Code}
+Static allocation
+\lstinputlisting[basicstyle=\tiny, firstline=3]{code/pointer1.cpp}
+
+Output
+\verbatiminput{code/pointer1-output.txt}
+\end{frame}
+
+\begin{frame}\frametitle{Pointers - Code}
+Dynamic Allocation
+\lstinputlisting[basicstyle=\tiny, firstline=4]{code/pointer2.cpp}
+
+Output
+\verbatiminput{code/pointer2-output.txt}
+\end{frame}

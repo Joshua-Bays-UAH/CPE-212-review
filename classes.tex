@@ -1,0 +1,48 @@
+\section{Classes}
+\begin{frame}\frametitle{Classes - Overview}
+\begin{itemize}
+\item Class: Custom model of abstract data type (ADT)
+\item Object: Instance of a class
+\item Member types
+	\begin{itemize}
+	\item Public: Can be accessed directly from outside of the class
+	\item Private: Can be accessed directly only from within the class
+	\item Protected: Can be inherited within derived classes
+	\end{itemize}
+\item Member functions
+	\begin{itemize}
+	\item Constructor: Initialize an object
+	\item Transformers: Change an object's state
+	\item Observers: Get (but not change) an object's state
+	\item Iterators: Process all components within an ADT
+	\item Destructor: Properly clean up and object (Ex: de-allocate memory)
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Classes - Inheritance}
+\begin{itemize}
+\item Inheritance: Reuse existing class code for another class
+\item Multiple inheritance: Inheriting code from multiple classes
+\item Parent/Base class: The class being inherited from
+\item Derived class: A class that inherits from another class
+\item Virtual function: A member function that can be redefined by an inherited class
+\item Friend function: Non-member function that can access private members
+\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Classes - Code}
+Inheritance
+\lstinputlisting[basicstyle=\tiny, firstline=3, lastline=20]{code/inheritance.cpp}
+\lstinputlisting[basicstyle=\tiny, firstline=30, lastline=36]{code/inheritance.cpp}
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{Classes - Code}
+Inheritance (cont.)
+\begin{center}
+\lstinputlisting[basicstyle=\tiny, firstline=22, lastline=28]{code/inheritance.cpp}
+\end{center}
+
+Output
+\verbatiminput{code/inheritance-output.txt}
+\end{frame}

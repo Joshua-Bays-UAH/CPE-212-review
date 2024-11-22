@@ -1,0 +1,94 @@
+\section{Searching}
+\begin{frame}\frametitle{Searching - Overview}
+\begin{itemize}
+\item Searching: Finding a specific item from a set of data
+	\begin{itemize}
+	\item Efficiency: Program performance is improved
+	\item Data retrieval: Specific data is quickly found in a large dataset
+	\item Problem solving: Data needs to be found in order to solve problems
+	\end{itemize}
+\item Different methods of searching
+	\begin{itemize}
+	\item Linear search
+	\item Binary search
+	\item Hashing
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Searching - Linear Search}
+\begin{itemize}
+\item Linear search: Sequentially search through a set of data until the value is found
+\item Complexity:
+	\begin{itemize}
+	\item Best case: $O(1)$ (The first element)
+	\item Worst case: $O(n)$ (The last element)
+	\end{itemize}
+\item Use cases:
+	\begin{itemize}
+	\item Small dataset
+	\item Unordered datasets
+	\item Linked lists
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Searching - Code}
+Basic linear search code
+\lstinputlisting[basicstyle=\tiny, firstline=3]{code/linear-search.cpp}
+
+Output
+\verbatiminput{code/linear-search-output.txt}
+\end{frame}
+
+\begin{frame}\frametitle{Searching - Binary Search}
+\begin{itemize}
+\item Binary search: Continually divide the search area in half, comparing the middle value to the target value
+\item Complexity
+	\begin{itemize}
+	\item Best case: $O(1)$ (The first element)
+	\item Worst case: $O(\log n)$ (The last element)
+	\end{itemize}
+\item Use cases:
+	\begin{itemize}
+	\item Data must be sorted
+	\item Random access should be a constant time function
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Searching - Code}
+Basic binary search code
+\lstinputlisting[basicstyle=\tiny, firstline=3]{code/binary-search.cpp}
+
+Output
+\verbatiminput{code/binary-search-output.txt}
+\end{frame}
+
+\begin{frame}\frametitle{Searching - Hashing}
+\begin{itemize}
+\item Hashing: Data storage technique designed to allow $O(1)$ search time
+	\begin{itemize}
+	\item Assign key-value pairs through a function to data inputs
+	\item Hash function used to store the element and to find if the element exists in the dataset
+	\item Tradeoff of memory space for access speed
+	\end{itemize}
+\item Collision: Repeated outputs for different inputs
+	\begin{itemize}
+	\item Must be addressed with hash function (Ex: Offsetting the value)
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Searching - Code}
+Basic hashing code
+\lstinputlisting[basicstyle=\tiny, firstline=3, lastline=25]{code/hashing.cpp}
+\end{frame}
+
+\begin{frame}\frametitle{Searching - Code}
+Basic hashing code (Cont.)
+\lstinputlisting[basicstyle=\tiny, firstline=27]{code/hashing.cpp}
+Output
+\verbatiminput[fontsize=]{code/hashing-output.txt}
+\end{frame}
+
