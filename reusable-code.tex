@@ -1,0 +1,56 @@
+\section{Reusable Code}
+\begin{frame}\frametitle{Reusable Code - Generic Programming}
+\begin{itemize}
+\item Generic programming: Allowing multiple types to be used as parameters by using a template
+	\begin{itemize}
+	\item Template: Code that gets expanded at compile time with the item types implemented within that code
+	\end{itemize}
+\item Uses
+	\begin{itemize}
+	\item Code can be reused without function overloading
+	\item Code can be reused for multiple cases
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Reusable Code - Code}
+Basic template code (Function template)
+\lstinputlisting[basicstyle=\tiny, firstline=3]{code/generic-programming-1.cpp}
+
+Output
+\verbatiminput{code/generic-programming-1-output.txt}
+\end{frame}
+
+\begin{frame}\frametitle{Reusable Code - Code}
+Basic template code (Function template)
+\lstinputlisting[basicstyle=\tiny, firstline=3]{code/generic-programming-2.cpp}
+
+Output
+\verbatiminput{code/generic-programming-2-output.txt}
+\end{frame}
+
+\begin{frame}\frametitle{Reusable Code - Overloading}
+\begin{itemize}
+\item Function overloading: Using the same function name for different parameter types (not return types)
+\item Operator overloading: Extending an operator's functionality to work with custom data types and objects
+	\begin{itemize}
+	\item The operators . .* :: ?: cannot be overloaded
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Reusable Code - Code}
+Basic function overloading code
+\lstinputlisting[basicstyle=\tiny, firstline=3]{code/function-overloading.cpp}
+
+Output
+\verbatiminput{code/function-overloading-output.txt}
+\end{frame}
+
+\begin{frame}\frametitle{Reusable Code - Code}
+Basic operator overloading code
+\lstinputlisting[basicstyle=\tiny, firstline=3]{code/operator-overloading.cpp}
+
+Output
+\verbatiminput{code/operator-overloading-output.txt}
+\end{frame}
