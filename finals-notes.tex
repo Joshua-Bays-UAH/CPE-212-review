@@ -1,4 +1,13 @@
-%TODO: Presentation 10 (Software Testing)
+% TODO
+%	Presentation 10 (Software Testing)
+%	Lists
+%	Queues
+%	Generic programming
+%	Recursion
+%	Trees
+%	Heaps
+%	Graphs
+%	STL
 
 \documentclass[c, aspectratio=169]{beamer}
 \usetheme[nofirafonts]{focus}
@@ -93,7 +102,7 @@
 	\item IsEmpty: Returns if the list has no elements in it
 	\item IsFull: Returns if the list is at its maximum capacity
 	\item Length: Returns the amount of elements in the list
-	\item Insert: Add an item to the list
+	\item Insert: Add an item to the list (May implement sorting)
 	\item Delete: Delete an item from the list
 	\item IsPresent: Check if an item exists in the list
 	\end{itemize}
@@ -124,9 +133,53 @@
 \begin{frame}\end{frame}
 
 \section{Heaps}
-\begin{frame}\end{frame}
-\begin{frame}\end{frame}
-\begin{frame}\end{frame}
+\begin{frame}\frametitle{Heaps - Overview}
+\begin{itemize}
+\item Heap: A complete binary tree that has either the greatest value (max heap) or the least greatest value (min heap) as the root node
+\item Basic heap operations
+	\begin{itemize}
+	\item Heapify: Rearrange the heap to maintain its order of max heap or min heap
+	\item Insert: Add an item to the heap and possibly heapify
+	\item Delete: Remove the root node, make the last node the root, and heapify
+	\end{itemize}
+\item Heaps are typically implemented as arrays
+	\begin{itemize}
+	\item root: array[0]
+	\item parent of ith node: array[(i-1)/2]
+	\item left child of ith node: array[(i*2)+1]
+	\item right child of ith node: array[(i*2)+2]
+	\end{itemize}
+\item Uses
+	\begin{itemize}
+	\item Priority queues
+	\item Sorting algorithms (heap sort)
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+%\begin{frame}\frametitle{Heaps - Code}
+%Basic heap sort code
+%\lstinputlisting[basicstyle=\tiny, firstline=6]{code/heap.cpp}
+%\end{frame}
+%
+%\begin{frame}\frametitle{Sorting - Code}
+%Output
+%\verbatiminput{code/heap-output.txt}
+%\end{frame}
+
+\begin{frame}\frametitle{Heaps - Complexity Table}
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+Data structure & Insertion & Deletion & Search & Indexing\\\hline
+BST (Average case) & $O(\log n)$ & $O(\log n)$ & $O(\log n)$ & \\\hline
+BST (Worst case) & $O(n)$ & $O(n)$ & $O(n)$ & \\\hline
+Heap & $O(\log n)$ & $O(\log n)$ & $O(n)$ & $O(1)$ \\\hline
+Array & $O(n)$ & $O(n)$ & $O(n)$ & $O(1)$ \\
+Linked List & $O(1)$ (at head) & $O(1)$ (at head) & $O(n)$ & $O(n)$ \\\hline
+\end{tabular}
+\end{center}
+\end{frame}
 
 \section{Graphs}
 \begin{frame}\end{frame}
