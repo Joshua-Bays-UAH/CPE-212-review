@@ -1,0 +1,91 @@
+\section{STL}
+\begin{frame}\frametitle{STL - Overview}
+\begin{itemize}
+\item Standard Template Library: Standardized pre-written templates
+	\begin{itemize}
+	\item Already tested and debugged
+	\item Efficient performance
+	\end{itemize}
+\item Sequence containers: Elements have a set order (indexed)
+	\begin{itemize}
+	\item Can be contiguous in memory (array, vector) or not contiguous (deque, list)
+	\end{itemize}
+\item Associative containers: Elements are based on keys
+	\begin{itemize}
+	\item Usually implemented with a balanced binary tree
+	\item Can limit keys to one instance (sets, maps) or allow duplicate keys (multisets, mulitmaps)
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{STL - Vectors}
+\begin{itemize}
+\item Vector: Dynamically sized array of a specified data type
+\item Basic vector operations:
+	\begin{itemize}
+	\item vector$<$T$>$: Constructor
+	\item $\sim$vector$<$T$>$: Destructor
+	\item size(): Return the amount of items in the vector
+	\item empty(): Return if there are no items in the vector
+	\item push\_back(T item): Append an item to the end of the vector
+	\item pop\_back(): Remove the end item of the vector
+	\item clear(): Remove all elements from the vector
+	\item begin(): Iterator of the front element
+	\item end(): Iterator of the end element
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{STL - Sets}
+\begin{itemize}
+\item Set: Sorted storage of key values
+	\begin{itemize}
+	\item Logarithmic search performance
+	\item Direct changing of elements is not permitted (remove the old value and add the new value)
+	\end{itemize}
+\item Multiset: Set that allows duplicate values
+\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{STL - Sets}
+\begin{itemize}
+\item Basic set/multiset operations:
+	\begin{itemize}
+	\item set$<$T$>$ / multiset$<$T$>$: Constructor
+	\item $\sim$set$<$T$>$ / $\sim$multiset$<$T$>$: Destructor
+	\item size(): Return the amount of items in the set
+	\item empty(): Return if there are no items in the set
+	\item find(T item): Return (first) position of the provided item
+	\item count(T item): Return how many items of the passed value exist in the set
+	\item insert(T item): Add an item of the passed value and return the index it was inserted to
+	\item erase(T item): Remove all items of the passed value from the set/multiset and return how many items were removed
+	\item clear(): Remove all items from the set
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{STL - Maps}
+\begin{itemize}
+\item Map: Sorted storage of key-value pairs
+\item Multimap: Map that allows duplicate keys
+\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{STL - Maps}
+\begin{itemize}
+\item Basic map/multimap operations:
+	\begin{itemize}
+	\item map$<$T, T$>$ / multimap$<$T, T$>$: Constructor (Provide both key and value data types)
+	\item map$<$T Op$>$ / multimap$<$T Op$>$:\\Constructor with sorting operation (Ex: map$<$int greater$<$int$>>$ is a descending map)
+	\item $\sim$map$<$T, T$>$ / $\sim$multimap$<$T, T$>$: Destructor
+	\item size(): Return the amount of items in the map
+	\item empty(): Return if there are no items in the map
+	\item find(T item): Return (first) position of the provided item
+	\item count(T item): Return how many items of the passed value exist in the map
+	\item insert(T item): Add an item of the passed value and return the index it was inserted to
+	\item erase(T item): Remove all items of the passed value from the set/multiset and return how many items were removed
+	\item clear(): Remove all items from the map
+	\item map[item]: Return the value associated with the key (map only)
+	\end{itemize}
+\end{itemize}
+\end{frame}
