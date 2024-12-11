@@ -10,8 +10,8 @@ int main(){
 	for(int i = 0; i < 10; i++){ arr.push_back(rand() % 100); }
 
 	int cmpIndex; int key;
-	for(int i = 1; i < arr.size(); i++){
-		for(int j = 0; j < arr.size(); j++){ printf("%i ", arr[j]); }printf("\n");
+	for(int i = 2; i < arr.size(); i++){
+		for(int j = 1; j < arr.size(); j++){ printf("%i ", arr[j]); }printf("\n");
 		
 		key = arr[i];
 		cmpIndex = i-1;
