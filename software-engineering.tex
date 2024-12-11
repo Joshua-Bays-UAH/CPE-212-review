@@ -77,3 +77,36 @@
 \item When creating interfaces, checking can exist in either in the interface implementation, or within client code (Varies by occasion)
 \end{itemize}
 \end{frame}
+
+\begin{frame}\frametitle{Software Engineering - Metric-Based Testing}
+\begin{itemize}
+\item Metric-based testing: Using measurable factors to evaluate how through the testing has been performed
+\item Code coverage: How much of the code has been tested
+	\begin{itemize}
+	\item Necessary, but not sufficient part of software testing
+	\item Statement coverage: Percentage of code statements executed
+	\item Branch coverage: Does the logical branching execute properly?
+	\item Path coverage: How many possible paths can be taken in the code?
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Software Engineering - Tools}
+\begin{itemize}
+\item gcov: Evaluates code coverage
+	\begin{itemize}
+	\item Command: g++ -fprofile-arcs -ftest-coverage [object].o -o [executable name]\\
+	$[$execute the program$]$\\
+	gcov [source file]
+	\end{itemize}
+\item gdb: debugger
+	\begin{itemize}
+	\item Command: g++ [source file].cpp -g -o [executable name]\\
+	gdb ./[executable]
+	\end{itemize}
+\item valgrind: bug checker
+	\begin{itemize}
+	\item Command: valgrind --leak-check=[summary/full] ./[executable]
+	\end{itemize}
+\end{itemize}
+\end{frame}
