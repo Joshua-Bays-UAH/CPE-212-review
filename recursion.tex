@@ -1,0 +1,43 @@
+\section{Recursion}
+\begin{frame}\frametitle{Recursion - Overview}
+\begin{itemize}
+\item Recursion: A function that implements itself somewhere in execution
+	\begin{itemize}
+	\item Direct recursion: A function directly calls itself
+	\item Indirect recursion: A series of functions is implemented in which the originating function is called at some point
+	\end{itemize}
+\item Base case: A nonrecursive instance of a recurring function
+\item Recursive case: A case of a recurring function that can be expressed in terms of itself
+\item Tail recursion: No statements are executed after the return from a recursive call
+\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Recursion - Implementation}
+\begin{itemize}
+\item Steps
+	\begin{itemize}
+	\item Understand the problem
+	\item Determine the size of the problem
+	\item Solve the base case
+	\item Solve the general case using smaller versions of the general case
+	\end{itemize}
+\item Use cases
+	\begin{itemize}
+	\item Shallow depth of recursion (high cost to perform recursion)
+	\item The amount of recursive cases grow slowly
+	\item The recursive solution is simpler or shorter than the nonrecursive
+	\end{itemize}
+\item Limitations
+	\begin{itemize}
+	\item Infinite recursion (Can cause stack overflow)
+	\item Sometimes an iterative method makes more sense to implement
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Recursion - Code}
+Basic recursive code (Fibonacci sequence)
+\lstinputlisting[basicstyle=\tiny, firstline=3]{code/recursion.cpp}
+Output
+\verbatiminput{code/recursion-output.txt}
+\end{frame}

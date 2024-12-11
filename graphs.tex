@@ -1,0 +1,71 @@
+\section{Graphs}
+\begin{frame}\frametitle{Graphs - Overview}
+\begin{itemize}
+\item Graph: Data structure of vertices/nodes and edges connecting the nodes
+	\begin{itemize}
+	\item Formally represented as $G = (V, E)$, where $V$ is a set of vertices, and $E$ is a set of edges
+	\end{itemize}
+\item Vertex/Node: Point on the graph
+\item Edge: A pair of vertices that represents a connection between them
+	\begin{itemize}
+	\item Formally represented as $\{V_1, V_2\}$, where $V_1$ and $V_2$ are 2 vertices
+	\end{itemize}
+\item Degree: Number of edges touching a vertex
+\item Path: Series of edges that can be traversed in order to travel between 2 vertices
+\item Neighbor/Adjacent: Vertex directly connected to another vertex by an edge
+\item Assuming there are no self-connected edges, if $|V| = n$, then for a directed $0 \leq |E| \leq n(n - 1)$, and for an undirected graph $0 \leq |E| \leq \frac{n(n - 1)}{2}$
+\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Graphs - Types}
+\begin{itemize}
+\item Undirected graph: Edges can be traversed in both directions ($\{A, B\} = \{B, A\}$ if $A \neq B$)
+\item Directed graph: Edges cannot be traversed in both directions ($\{A, B\} \neq \{B, A\}$ if $A \neq B$)
+\item Connected: Every vertex has at least 1 path with another vertex
+\item Strongly connected: Every vertex has an edge that connects to every other vertex
+\item Weighted graph: Every edge has an associated numerical value
+\item Unweighted graph: Every edge's associate numerical value is equal or no value is associated with an edge
+\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Graphs - Storage and Representation}
+\begin{itemize}
+\item Edge list: Create a set of vertex objects and a list with items containing a pointer to a source node and destination node
+	\begin{itemize}
+	\item Efficiency of finding all adjacent nodes: $O(|E|)$
+	\item Efficiency of finding if nodes are connected: $O(|E|)$
+	\end{itemize}
+\item Adjacency matrix: $|V| \times |V|$ matrix where $A_{i j} = \begin{cases}1 & \text{i and j are connected}\\ 0 & \text{otherwise}\end{cases}$
+	\begin{itemize}
+	\item Efficiency of finding all adjacent nodes: $O(|V|)$
+	\item Efficiency of finding if nodes are connected: $O(|V|)$
+	\item Efficiency of finding if nodes are connected (hash table): $O(|1|)$
+	\item Space efficiency: $O(|V|^2)$
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Graphs - Storage and Representation}
+\begin{itemize}
+\item Adjacency list: Dynamically allocated list of edges for each vertex
+	\begin{itemize}
+	\item Less space used when compared to adjacency matrix
+	\item Efficiency of finding all adjacent nodes: $O(|V|)$
+	\item Efficiency of finding if nodes are connected: $O(|V|)$
+	\item Efficiency of finding if nodes are connected (binary search tree): $O(|\log V|)$
+	\item Space efficiency: $O(|E|)$
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Graphs - Searching}
+\begin{itemize}
+\item Depth-First Search (DFS): Traverse a branch to the deepest point before going back
+\item Breadth-First Seach (BFS): Look at all paths of the same depth before going to the next level
+\item Greedy algorithm: Choose the most locally optimal choice each step of an algorithm in order to find a generally globally efficient result
+	\begin{itemize}
+	\item Usually simpler to program
+	\item Usually not the most efficient overall method
+	\end{itemize}
+\end{itemize}
+\end{frame}
